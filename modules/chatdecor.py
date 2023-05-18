@@ -21,5 +21,5 @@ class Chatdecor(Module):
 		 redis.set(f"uid:{client.uid}:tcl", f"{tcl}")
 		 redis.set(f"uid:{client.uid}:bdc", f"{bdc}")
 		 refresh_avatar(client, self.server)
-		 client.send(["cp.ms.rsm", {"txt": f"Sohbet dekorunuz başarılı bir şekilde değiştirildi."}])
+		 client.send(["cp.ms.rsm", {"txt": f"Pomyślnie zmieniono dekorację czatu."}])
 		 

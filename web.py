@@ -71,7 +71,7 @@ async def logout(request):
 @routes.get("/kayitol")
 async def register(request):
     if not registation:
-        return web.Response(text="Rejestracja jest wyłączona")
+        return web.Response(text="Rejestracja jest wyłączona!")
     uid, password = utils.bot_common.new_account(app["redis"])
     return web.Response(text=f"Informacje o koncie ; ID: - {uid}, "
                              f"Twoje hasło: - {password}")
