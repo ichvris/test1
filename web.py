@@ -71,10 +71,10 @@ async def logout(request):
 @routes.get("/kayitol")
 async def register(request):
     if not registation:
-        return web.Response(text="Регистрация отключена")
+        return web.Response(text="Rejestracja jest wyłączona")
     uid, password = utils.bot_common.new_account(app["redis"])
-    return web.Response(text=f"Avataria PVP Hesap Bilgileriniz; ID: - {uid}, "
-                             f"Şifreniz: - {password}")
+    return web.Response(text=f"Informacje o koncie ; ID: - {uid}, "
+                             f"Twoje hasło: - {password}")
 
 
 @routes.get("/prelogin")
@@ -133,7 +133,7 @@ async def main():
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader("templates"))
     runner = web.AppRunner(app)
     await runner.setup()
-    site = web.TCPSite(runner, "BURAYA OYUN IP YAZIN", int(config["webserver"]["web_port"]))
+    site = web.TCPSite(runner, "WPISZ TUTAJ ADRES IP GRY", int(config["webserver"]["web_port"]))
     await site.start()
 
 

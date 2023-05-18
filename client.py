@@ -50,7 +50,7 @@ class Client():
                     try:
                         self.server.process_data(final_data, self)
                     except Exception:
-                        logging.exception("Veriler işlenirken bir hata oluştu")
+                        logging.exception("Wystąpił błąd podczas przetwarzania danych")
             if len(data) - data.pos > 0:
                 buffer = data.read(len(data) - data.pos)
         self._close_connection()
@@ -87,7 +87,7 @@ class Client():
 
     def _close_connection(self):
         self.connection.close()
-        logging.debug(f"{self.address[0]} IP'li oyuncu oyundan ayrıldı")
+        logging.debug(f"{self.address[0]} użytkownik opuścił grę.")
         if self.uid:
             if self.room:
                 prefix = common.get_prefix(self.room)
